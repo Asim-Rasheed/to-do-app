@@ -1,0 +1,10 @@
+# Node backend
+server-side/node_modules/
+server-side/.env
+
+# React frontend
+client-side/node_modules/
+client-side/build/
+
+# Logs
+*.log
