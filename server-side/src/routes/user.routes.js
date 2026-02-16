@@ -8,6 +8,6 @@ const router=express.Router();
 router.post("/auth/login", login)
 router.post("/auth/register", register)
 
-router.post("/createTask", authenticatonToken, createTask)
+router.post("/createTask", authenticatonToken, me, createTask)
 router.get("/accessTask", authenticatonToken, me, accessTask)
 module.exports=router;
