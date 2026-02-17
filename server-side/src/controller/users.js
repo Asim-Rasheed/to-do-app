@@ -48,5 +48,11 @@ const login = async (req, res) => {
         console.error(err);
         res.status(500).json({ message: "Server error" });
     }
+
 };
-module.exports={login, register};
+
+    const me = async (req, res) => {
+    const user = req.user;
+    res.json({ user })
+}
+module.exports={login, register, me};
