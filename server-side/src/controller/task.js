@@ -42,14 +42,9 @@ const accessTask = async (req, res) => {
     }
 }
 
-const markTaskCompletedByAdmin = async (req, res) => {
+const markTaskCompleted = async (req, res) => {
   try {
     const { id } = req.params; 
-
-    // Only allow Admin
-    if (req.user.role !== "Admin") {
-      return res.status(403).json({ message: "Only admin can mark tasks complete" });
-    }
 
     const task = await Task.findById(id).populate("user", "name email");
     if (!task) {
@@ -66,4 +61,4 @@ const markTaskCompletedByAdmin = async (req, res) => {
   }
 };
 
-module.exports = { createTask, accessTask, markTaskCompletedByAdmin}
+module.exports = { createTask, accessTask, markTaskCompleted}
